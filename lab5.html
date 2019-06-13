@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Первый сайт </title>
+</head>
+<body style="text-align:center">
+<script>
+function showall()
+{
+a = document.all.length;
+for (i=0;i<=a;i++){
+alert(document.all[i].tagName);
+alert(i);
+}
+}
+function showdaughters()
+{
+for(i=0;i<=document.body.childNodes.length;i++){
+var child = document.body.childNodes[i];
+if(child.tagName!=undefined){
+alert(child.tagName);
+}
+}
+}
+function span()
+{
+span2=document.getElementsByTagName('span')[2];
+alert(span2.innerHTML);
+span3=document.getElementById('first');
+alert(span3.innerHTML);
+}
+
+</script>
+<h1> Я, ФИО, изучаю <span id="first" style="color:red">HTML</span> и CSS </h1>
+<h2> Заголовок для всего текста </h2>
+<h3> Заголовок для первого абзаца </h3>
+<p> первая <span>строка</span></br>
+вторая строка</br>
+третья строка
+</p>
+<h3> Заголовок для второго абзаца </h3>
+<input type="button" onclick="showall()" value="firsttask">
+<input type="button" onclick="showdaughters()" value="secondtask">
+<input type="button" onclick="span()" value="thirdtask">
+<input type="button" onclick="table()" value="fourthtask">
+<p> первая строка</br>
+<span>вторая</span> строка</br>
+третья строка
+</p>
+<h3> Заголовок для третьего абзаца </h3>
+<p> первая строка</br>
+вторая строка</br>
+<span>третья</span> строка
+</p>
+<h2> Список , отражающий его содержимое </h2>
+<ol>
+<li>Элемент 1 </li>
+<ul type="square">
+<li> Элемент 1.1</li>
+<li> Элемент 1.1</li>
+</ul>
+<li>Элемент 2 </li>
+<ul type="disk"> 
+<li> Элемент 2.1</li>
+<li> Элемент 2.2</li>
+<li> Элемент 2.3</li>
+</ul>
+<li>Элемент 3 </li>
+<ul type="circle">
+<li> Элемент 3.1</li>
+<li> Элемент 3.2</li>
+</ul>
+</ol>
+<table border="20px black dashed" id="forecast-table">
+<tr>
+<td> ФИО </td>
+<td colspan="3"> Фамилия Имя Отчество</td>
+</tr>
+<tr>
+<td><img src="photo.jpg" width="100px" height="100px"</td>
+<td colspan="3"> Адрес: ул.Белорусская, д.21, ком.504
+</tr>
+<tr>
+<td rowspan="7"> 1 Семестр<br> 2016/2017 уч.года </td>
+<td>Дата</td>
+<td>Предмет</td>
+<td>Оценка</td>
+<tr>
+<tr>
+<td>31.12.2016</td><td>ОАиП</td><td>6</td>
+</tr>
+<tr>
+<td>5.01.2017</td><td>Физика</td><td>9</td>
+</tr>
+<tr> 
+<td>11.01.2017</td><td>ОИТ</td><td>4</td>
+</tr>
+<tr> 
+<td>16.01.2017</td><td>Математика</td><td>6</td>
+</tr>
+<tr> 
+<td>22.01.2017</td><td>АЛОЦВМ</td><td>8</td>
+</tr>
+</table>
+	<script>
+	function table()
+	{var table = document.getElementById("forecast-table"); 
+	var cells = table.getElementsByTagName("td"); 
+	var x = (Number(cells[10].innerHTML)+Number(cells[13].innerHTML)+Number(cells[16].innerHTML)+Number(cells[19].innerHTML)+Number(cells[22].innerHTML))/5
+	var s = document.getElementsByTagName('span')[1];
+	s.innerHTML+=' ' + x;
+	}
+</script>
+</body>
+</html>

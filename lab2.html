@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+
+<html>
+	
+<head >
+	
+
+<meta charset="utf-8">
+<title>js
+</title>
+
+<link rel="stylesheet" href="style.css">
+<script>
+function fun1(){
+alert('Хелёу');
+x=prompt('Введите ваше имя','Имя');
+alert('Привет, ' + x);
+y=confirm('Псс, ты , не хочешь немного дизайна?');
+if(y==true){
+alert('Молодец');
+}
+else {
+alert('Фуу таким быть');
+}
+}
+function fun2(){
+var x,y;
+x=prompt('Введите первое число','число');
+y=prompt('Введите второе число','число');
+alert('число+число = ' + (Number(x) + Number(y)));
+alert('строка + строка = ' + (x+y));
+alert('число + строка = ' + (Number(x)+y));
+alert('строка + число = ' + (x+Number(y)));
+alert('Результатом сложения строки и числа всегда является строка ');
+}
+function fun3(){
+var x=1,y=2,a,b,c;
+a=((x*x*x*y*y*y)/(3*(x+y)));
+b=((2*x-0.5*y)/(100*x*x*y*y));
+alert('Знаечние первого выражения ' + a);
+alert('Знаечние второго выражения ' + b);
+c=(Number(a)%Number(b));
+alert('Остаток от деления ' + c);
+document.write(c);
+}
+function fun4(){
+var x;
+x=prompt('Введите число','число');
+if (((x<20) || (x>40)) && (x!=15) && (x%5==0)){
+alert('Правильное значение');
+}
+else
+{
+alert('Неправильное значение');
+}
+}
+function fun42(){
+var x;
+x=prompt('Введите свой средний балл по итогам зимней сессии','балл');
+if ((x>0)&&(x<4)){
+alert('Мне кажется, что вас отчислят');
+}
+if ((x>=4)&&(x<5)){
+alert('У вас не будет стипендии');
+}
+if ((x>=5)&&(x<6)){
+alert('У вас будет  базовая стипендии');
+}
+if ((x>=6)&&(x<8)){
+alert('У вас будет стипендия 1,2');
+}
+if ((x>=8)&&(x<9)){
+alert('У вас будет стипендия 1,4');
+}
+if (x>=9){
+alert('У вас будет стипендия 1,6 \r \n Вы, большая умничка:)');
+}
+if ((x>10)||(x<0)){
+alert('Врать плохо');
+}
+}
+function fun5(){
+var x,y;
+x=prompt('Введите первое число','число');
+y=prompt('Введите второе число','число');
+if (Number (x)>Number (y)){
+alert(x+' больше ' + y);
+}
+else if (Number (x)<Number (y)) { 
+alert(y+ ' больше '+ x);
+}
+if (x==y){
+alert('Числа равны');
+}
+}
+function fun52(){
+var x,y,c;
+x=prompt('Введите сумму покупки','сумма');
+y=prompt('Введите остаток на карточке','сумма');
+c=(y>=x)?'хватит':'не хватит';
+alert(c);
+}
+function fun6(){
+var d=new Date();
+var theDay=d.getDay();
+switch (theDay)
+{
+case 1:
+ document.write("Ненавижу Понедельники");
+  break;
+case 2:
+ document.write("Вторник, уже почти середина недели");
+  break;
+case 3:
+ document.write("Среда, ты дожил до середины недели");
+  break;
+case 4:
+ document.write("Четверг, уже почти пятница");
+  break;
+case 5:
+  document.write("Наконец-то Пятница");
+  break;
+case 6:
+  document.write("Суббота, всего 2 пары и домой");
+  break;
+case 0:
+  document.write("Воскресенье, можно и поспать");
+  break;
+default:
+  document.write("Когда же наступят выходные!");
+}
+}
+function fun7(){
+var data = '{"name":"Вася", "age": 30}';
+var user = JSON.parse(data); 
+alert( user.name ); 
+alert( user.age );
+var data = "Has Error";
+try {
+
+  var user = JSON.parse(data); 
+  alert( user.name ); 
+}
+ catch (e) {
+  
+  alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз" );
+  alert( e.name );
+  alert( e.message );
+}
+}
+
+
+function fun22(){
+var a,b,i,j;
+a=prompt('Введите первое число','число');
+b=prompt('Введите второе число','число');
+document.write("<table border='1px ' align='center' bgcolor='pink' bordercolor='#B90AE6'>");
+for (i=1;i<=a;i++) 
+{
+	document.write("<tr height='50px'>");
+ 	 for (j=1;j<=b; j++)
+	{
+   	document.write("<td align='center' width='50px'>");
+   	document.write (' '+i*j+' ');
+   	document.write("</td>");
+	}
+document.write("</tr>");
+}
+document.write("/table>");
+}
+
+function fun23(){
+var a=1,b=2;
+document.write("<table border='1px dashed red' align='center' bgcolor='#8BFDD6' bordercolor='#032177'>");
+document.write("<tr height='50px'>");
+document.write("<td align='center' width='80px'>");
+document.write (' Радиус ');
+document.write("</td>");
+document.write("<td align='center' width='80px'>");
+document.write (' Площадь круга');
+document.write("</td>");
+document.write("<td align='center' width='80px'>");
+document.write (' Длина окружности');
+document.write("</td>");
+document.write("</tr>");
+ 	do{	document.write("<tr height='50px'>");
+		document.write("<td align='center' width='80px'>");
+		document.write (' ' + a.toPrecision(3)+' ');
+		document.write("</td>");
+		document.write("<td align='center' width='80px'>");
+		document.write (' ' + (Math.PI*a*a).toPrecision(3)+' ');
+		document.write("</td>");
+		document.write("<td align='center' width='80px'>");
+		document.write (' ' + (2*Math.PI*a).toPrecision(3)+' ');
+		document.write("</td>");
+		document.write("</tr>");
+		a=a+0.3;
+	}
+	while (a<b)
+	document.write("<tr height='50px'>");
+		document.write("<td align='center' width='80px'>");
+		document.write (' ' + b.toPrecision(3)+' ');
+		document.write("</td>");
+		document.write("<td align='center' width='80px'>");
+		document.write (' ' + (Math.PI*b*b).toPrecision(3)+' ');
+		document.write("</td>");
+		document.write("<td align='center' width='80px'>");
+		document.write (' ' + (2*Math.PI*b).toPrecision(3)+' ');
+		document.write("</td>");
+		document.write("</tr>");
+document.write("/table>");
+}
+function fun24(){
+var x,y;
+document.write("<table border='1px dashed red' align='center' bgcolor='#FDF4B4' bordercolor='red'>");
+document.write("<tr height='50px'>");
+document.write("<td align='center' width='80px'>");
+document.write (' Число ');
+document.write("</td>");
+document.write("<td align='center' width='80px'>");
+document.write (' Метод');
+document.write("</td>");
+document.write("<td align='center' width='80px'>");
+document.write (' Результат');
+document.write("</td>");
+document.write("<td align='center' width='80px'>");
+document.write (' Описание метода ');
+document.write("</td>");
+document.write("</tr>");
+x = new Number(78.21005);
+document.write("<tr height='50px'>");
+
+document.write("<td align='center' width='80px'>");
+document.write (x);
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' toExponential(3) ');
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(x.toExponential(3));
+document.write("</td>");
+
+
+document.write("<td align='center' width='80px'>");
+document.write(' Возвращает строку, представляющую объект Number в экспоненциальной записи. ');
+document.write("</td>");
+
+document.write("</tr>");
+
+
+
+
+document.write("<tr height='50px'>");
+
+document.write("<td align='center' width='80px'>");
+document.write (x);
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' toFixed(3) ');
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(x.toFixed(3));
+document.write("</td>");
+
+
+document.write("<td align='center' width='80px'>");
+document.write(' форматирует число, используя запись с фиксированной запятой. ');
+document.write("</td>");
+document.write("</tr>");
+
+
+document.write("<tr height='50px'>");
+
+document.write("<td align='center' width='80px'>");
+document.write (x);
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' toPrecision(3) ');
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(x.toPrecision(3));
+document.write("</td>");
+
+
+document.write("<td align='center' width='80px'>");
+document.write(' возвращает строку, представляющую объект Number с указанной точностью. ');
+document.write("</td>");
+
+document.write("</tr>");
+
+
+
+
+
+document.write("<tr height='50px'>");
+
+document.write("<td align='center' width='80px'>");
+document.write (x);
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' toString(16) ');
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(x.toString(16));
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' возвращает строку, представляющую объект. ');
+document.write("</td>");
+
+document.write("</tr>");
+
+y = new Number(14);
+document.write("<tr height='50px'>");
+
+document.write("<td align='center' width='80px'>");
+document.write (y);
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' toExponential(3) ');
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(y.toExponential(3));
+document.write("</td>");
+
+
+document.write("<td align='center' width='80px'>");
+document.write(' Возвращает строку, представляющую объект Number в экспоненциальной записи. ');
+document.write("</td>");
+
+document.write("</tr>");
+
+
+
+
+document.write("<tr height='50px'>");
+
+document.write("<td align='center' width='80px'>");
+document.write (y);
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' toFixed(3) ');
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(y.toFixed(3));
+document.write("</td>");
+
+
+document.write("<td align='center' width='80px'>");
+document.write(' форматирует число, используя запись с фиксированной запятой. ');
+document.write("</td>");
+document.write("</tr>");
+
+
+document.write("<tr height='50px'>");
+
+document.write("<td align='center' width='80px'>");
+document.write (y);
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' toPrecision(3) ');
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(y.toPrecision(3));
+document.write("</td>");
+
+
+document.write("<td align='center' width='80px'>");
+document.write(' возвращает строку, представляющую объект Number с указанной точностью. ');
+document.write("</td>");
+
+document.write("</tr>");
+
+
+
+
+
+document.write("<tr height='50px'>");
+
+document.write("<td align='center' width='80px'>");
+document.write (y);
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' toString(3) ');
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(y.toString(3));
+document.write("</td>");
+
+document.write("<td align='center' width='80px'>");
+document.write(' возвращает строку, представляющую объект. ');
+document.write("</td>");
+
+document.write("</tr>");
+
+document.write("/table>");	
+}
+
+</script>
+</head>
+	
+<body>
+	
+
+
+<input  type='button' value='Диалог' onclick='fun1()' />
+<input  type='button' value='сложение' onclick='fun2()' />
+<input  type='button' value='арифмитические операции' onclick='fun3()' />
+<input  type='button' value='логические операции' onclick='fun4()' />
+<input  type='button' value='логические операции с баллами' onclick='fun42()' />
+<input  type='button' value='задание № 5' onclick='fun5()' />
+<input  type='button' value='задание № 5( свой пример)' onclick='fun52()' />
+<input  type='button' value='сегодняшний день' onclick='fun6()' />
+<input  type='button' value='анализ ошибки' onclick='fun7()' />
+<input  type='button' value='таблица умножения' onclick='fun22()' />
+<input  type='button' value='таблица радиусов' onclick='fun23()' />
+<input  type='button' value='Объекты' onclick='fun24()' />
+</BODY>
+</html>

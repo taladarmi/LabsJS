@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html>
+<head>
+<style>
+
+#fakname{
+text-align:center;
+}
+</style>
+</head>
+<body> 
+<form name='form1'>
+<fieldset>
+<textarea id="fakname"> Факультет Информационных технологий </textarea>
+<legend>Данные о пользователе</legend>
+<input type='text' name='userName' placeholder='Имя'/><br />
+<input type='text' name='lastName' placeholder='Фамилия'/><br />
+<br/>
+Специальность <select>
+<option value='ДЭиВи'>ДэиВи</option>
+<option value='ПОИТ'>ПОИТ</option>
+<option value='ИСИТ'>ИСИТ</option>
+<option value='ПОИМБС'>ПОИМБС</option>
+</select>
+<br/>
+<br/>
+<legend> Курс </legend>
+<input type='radio' name='s' value='1' />1
+<input type='radio' name='s' value='2' />2
+<input type='radio' name='s' value='3' />3
+<input type='radio' name='s' value='4' />4
+<br/>
+<br/>
+<legend> Предметы: </legend>
+<input type='checkbox' name='space1' value='1' /> 
+ОАиП 
+<input type='checkbox' name='space2' value='2' /> 
+КЯР 
+<input type='checkbox' name='space3' value='3' /> 
+Математика 
+<input type='checkbox' name='space4' value='4' /> 
+Физика 
+<input type='checkbox' name='space5' value='5' /> 
+История
+<br/>
+<br/>
+<script>
+function showall(){
+alert('регистрация прошла успешно');
+}
+function fun2(){
+studname=(document.forms["form1"].userName.value);
+studlastname=(document.forms["form1"].lastName.value);
+spec=(document.forms["form1"].elements[4].value);
+kurs=(document.forms["form1"].s.value);
+c1 = document.forms.form1.space1.checked;
+c2 = document.forms.form1.space2.checked;
+c3 = document.forms.form1.space3.checked;
+c4 = document.forms.form1.space4.checked;
+c5 = document.forms.form1.space5.checked;
+if(c1)document.write('<li>ОИТ</li>');
+if(c2)document.write('<li>ОАиП</li>');
+if(c3)document.write('<li>История</li>');
+if(c4)document.write('<li>Физика</li>');
+if(c5)document.write('<li>Математика</li>');
+document.write('</ul>');
+if(document.forms["form1"].userName.checked){
+oa=1;
+}
+x=(document.getElementById('fakname'));
+document.write(x.innerHTML);
+document.write('<br\>');
+document.write('<br\>');
+document.write('Студент(ка) '+studname+' '+studlastname+' специальность '+spec+' курс '+kurs+' должен сдать следущие предметы:'+'<br\><ul>');
+if(c1)document.write('<li>ОИТ</li>');
+if(c2)document.write('<li>ОАиП</li>');
+if(c3)document.write('<li>История</li>');
+if(c4)document.write('<li>Физика</li>');
+if(c5)document.write('<li>Математика</li>');
+document.write('</ul>');
+}
+function pri()
+{ c1 = document.forms.s.space1.checked;
+c2 = document.forms.s.space2.checked;
+c3 = document.forms.s.space3.checked;
+c4 = document.forms.s.space4.checked;
+c5 = document.forms.s.space5.checked;
+document.write('<ins>Факультет информационных технологий</ins></br>' +'Студент '+ document.forms.s.lastname.value + ' специальность ' + document.forms.s.sel.value + ' курс ' +document.forms.s.kurs.value + ' должен сдавать следующие предметы:</br><ul>');
+// а сюда неплохо бы вывести через li отмеченные элементы
+if(c1)document.write('<li>ОИТ</li>');
+if(c2)document.write('<li>ОАиП</li>');
+if(c3)document.write('<li>История</li>');
+if(c4)document.write('<li>Физика</li>');
+if(c5)document.write('<li>Математика</li>');
+document.write('</ul>');
+}
+</script>
+<input type="submit" onclick="showall()" name='sub1'/> 
+<input type="button" onclick="pri()" value="Напечатать">
+<input type="reset"/> 
+</fieldset>
+</form>
+
+</body>
+</html>

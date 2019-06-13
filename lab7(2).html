@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html>
+<head>
+</head>
+<body>
+
+<form name="s">
+<fieldset>
+<legend>Форма</legend>
+<textarea style="height:100px;width:220px;" id="fakname">
+Факультет
+информационных
+технологий
+</textarea></br>
+<b></b><br /> <input type='text' placeholder='Фамилия' name='lastname' />
+<b></b> <br /><input type='text' placeholder='Имя' name='firstname' />
+</br>
+</br>
+<b>Специальность</b>
+<select name ="sel">
+<option> ПОИТ </option>
+<option> ИСИТ </option>
+<option> ПОИБМС </option>
+<option> ДЭиВИ </option>
+</select>
+<p>Курс:</p>
+<input type='radio' name='kurs' value='1' /> 1
+<input type='radio' name='kurs' value='2' /> 2
+<input type='radio' name='kurs' value='3' /> 3
+<input type='radio' name='kurs' value='4' /> 4
+<p>Предметы</p>
+<input type='checkbox' name='space1' id="c1" value='1' /> 
+ОИТ
+<input type='checkbox' name='space2' id="c2" value='2' /> 
+ОАП
+<input type='checkbox' name='space3' id="c3" value='3' /> 
+История
+<input type='checkbox' name='space4' id="c4" value='4' /> 
+Физика
+<input type='checkbox' name='space5' id="c5" value='5' /> 
+Математика <br />
+<input type="button" onclick="submit()" value="submit"/>
+<input type="button" value="reset"/></br>
+<input type="button" value="Напечатать" onclick="pri()"/>
+<input type="button" value="Вторая форма" onclick="pr()"/>
+<input type="submit" onclick="showall()" value="submit2"/> 
+
+</fieldset>
+</form>
+<script>
+function pr(){
+f1 = document.forms.s.space1.checked;
+f2 = document.forms.s.space2.checked;
+f3 = document.forms.s.space3.checked;
+f4 = document.forms.s.space4.checked;
+f5 = document.forms.s.space5.checked;
+document.write('<form><fieldset><legend>Вторая форма </legend><ul>');
+if(f1)document.write('<li>ОИТ</li>');
+if(f2)document.write('<li>ОАиП</li>');
+if(f3)document.write('<li>История</li>');
+if(f4)document.write('<li>Физика</li>');
+if(f5)document.write('<li>Математика</li>');
+document.write('</ul></fieldset></form>');
+
+}
+function pri()
+{ x=(document.getElementById('fakname'));
+c1 = document.forms.s.space1.checked;
+c2 = document.forms.s.space2.checked;
+c3 = document.forms.s.space3.checked;
+c4 = document.forms.s.space4.checked;
+c5 = document.forms.s.space5.checked;
+/*studname=(document.forms["s"].firstname.value);*/
+/*studlastname=(document.forms["s"].lastname.value);*/
+/*spec=(document.forms["s"].elements[4].value);*/
+
+document.write(x.innerHTML+'</br> Студент '+ document.forms.s.lastname.value + ' специальность ' + document.forms.s.sel.value + ' курс ' +document.forms.s.kurs.value + ' должен сдавать следующие предметы:</br><ul>');
+if(c1)document.write('<li>ОИТ</li>');
+if(c2)document.write('<li>ОАиП</li>');
+if(c3)document.write('<li>История</li>');
+if(c4)document.write('<li>Физика</li>');
+if(c5)document.write('<li>Математика</li>');
+document.write('</ul>');
+}
+function showall(){
+alert('регистрация прошла успешно');
+}
+</script> 
+</body>
+</html>

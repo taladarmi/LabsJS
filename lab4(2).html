@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html>
+	
+<head >
+	
+
+<meta charset="utf-8">
+<title>js
+</title>
+
+<link rel="stylesheet" href="style.css">
+<script>
+function Gruppa(n,spec,kolich) {
+this.n=n;
+this.spec=spec;
+this.kolich=kolich;
+this.add_stud=function add_stud(k) {
+              this.kolich=Number(kolich)+Number(k);
+document.write('В группу ' + this.n + ' добавили '+ k + ' студентов(а).<br\>'); 
+}
+this.sub_stud=function sub_stud(k) {
+              this.kolich=this.kolich-k;
+document.write('Из группы № ' + this.n + ' отчислили '+ k + ' студентов(а).<br\>'); 
+}
+   }
+function fun41(){
+var x=1,n,kolich,spec;
+while (x!=0)
+{
+n=prompt('Введите номер гурппы','группа');
+kolich=prompt('Введите кличество студентов','число');
+spec=prompt('Введите специальность','спеца');
+gr1=new Gruppa(n, spec,kolich);
+document.write('Группа №' + gr1.n + ' Cпециальность ' + gr1.spec + '  студентов ' + gr1.kolich  );
+document.write('<br\>');
+k=prompt('Введите кличество новых студентов','число');
+gr1.add_stud(Number(k));
+document.write('Группа №' + gr1.n + ' Cпециальность ' + gr1.spec + ' После добавления студентов ' + gr1.kolich  );
+document.write('<br\>');
+k=prompt('Введите кличество отчисленных студентов','число');
+gr1.sub_stud(k);
+document.write('Группа №' + gr1.n + ' Cпециальность ' + gr1.spec + ' После отчисления студентов ' + gr1.kolich  );
+document.write('<br\>');
+document.write('<br\>');
+x=prompt('Продолжить? 1-да, 0-нет','число');
+}
+}
+</script>
+</head>
+	
+<body>
+	
+
+<input  type='button' value='Студенты ' onclick='fun41()' />
+</BODY>
+</html>

@@ -1,0 +1,27 @@
+﻿.menu-item{
+border: 2px soild #66CDAA;
+display: inline-block;
+cursor: pointer;
+height: 40px;
+width: 220px;
+text-align:center;
+}
+.menu-item .submenu{
+height: 40px;
+width: 220px;
+padding-top:15px;
+background: pink;
+position: absolute;
+
+text-align:center;
+}
+a:visited { 
+   			 color: #0F80FA;
+   			}
+   			
+			a:hover { 
+    			color:#D8FD86; 
+   			}
+			a:active { 
+    			color:#FEF425;
+   			}

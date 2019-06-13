@@ -1,0 +1,67 @@
+﻿<!doctype html>
+	<html>
+		<head>
+		</head>
+		<body>
+				<script src="jquery.js"></script>
+				<script src="flot/jquery.flot.js"></script>
+			<div id="placeholder" style="width:600px;height:300px;"></div>
+			<div>
+				<input type="radio" name="r1" id="r1"><img src="qwe.png"> </input>	
+				<input type="radio" name="r1" id="r2"><img src="qwer.png"> </input>	
+				<input type="radio" name="r1" id="r3"><img src="q.png"> </input>	
+				<input type="radio" name="r1" id="r4"><img src="qw.png"> </input>	
+			</div>
+			<button id="b1"> Обновить график </button>
+		</body>
+		<script>
+		$("#b1").click(function () 
+		{
+			if ( $('#r1:checked').val() ){
+			var min = -8,
+				max = 8,
+				step = 0.01;
+			data = [];
+			for (var x = min; x <= max; x += step)
+				{
+				data.push([x, Math.sin(x)]);
+				}
+			$.plot($("#placeholder"), [data]);
+			}
+			if ( $('#r2:checked').val() ){
+			var min = -8,
+				max = 8,
+				step = 0.01;
+			data = [];
+			for (var x = min; x <= max; x += step)
+				{
+				data.push([x, Math.cos(x)]);
+				}
+			$.plot($("#placeholder"), [data]);
+			}
+			if ( $('#r3:checked').val() ){
+			var min = -8,
+				max = 8,
+				step = 0.01;
+			data = [];
+			for (var x = min; x <= max; x += step)
+				{
+				data.push([x, Math.pow(x,2)]);
+				}
+			$.plot($("#placeholder"), [data]);
+			}
+			if ( $('#r4:checked').val() ){
+			var min = -8,
+				max = 8,
+				step = 0.01;
+			data = [];
+			for (var x = min; x <= max; x += step)
+				{
+				data.push([x, Math.pow(x,3)]);
+				}
+			$.plot($("#placeholder"), [data]);
+			}
+			
+		});
+		</script>
+	</html>

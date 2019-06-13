@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+<div id="ball" style="width:100px;height:100px;background-color:green;border-radius:50px;position:absolute" >
+</div>
+<text id="ball" style="position:absolute" > Волшебный  текст который можно двигать</text>
+<div id = "image" onclick="next()" style="position:absolute"> 
+<img src="1.jpg" />
+</div>
+</body>
+<script>
+var ball = document.getElementById('ball');
+ball.onmousedown = function(e) 
+{
+moveAt(e);
+
+function moveAt(e) {
+ball.style.left = e.pageX - ball.offsetWidth / 2 + 'px'; //отступ слева
+ball.style.top = e.pageY - ball.offsetHeight / 2 + 'px'; //отступ сверху
+}
+
+document.onmousemove = function(e) 
+{
+moveAt(e);
+}
+ball.onmouseup = function() // когда отпускаем лкм объект перестает перемещаться
+{
+document.onmousemove = null;
+ball.onmouseup = null;
+}
+}
+
+
+var t = setInterval(next,20);
+var img = document.getElementById('image');
+var i = 0;
+var j = 0;
+var b = true;
+function next()
+{ 
+if(j>150){b = false};
+if(j<1){b = true};
+if (b == true){
+i+=10;
+img.style.left = Math.sin(i/100)*50 +"px";
+img.style.top = j + "px";
+j+=1;}
+else{
+i+=10;
+img.style.left = Math.sin(i/100)*50 +"px";
+img.style.top = j + "px";
+j-=1;}
+}
+
+</script>
+</html>

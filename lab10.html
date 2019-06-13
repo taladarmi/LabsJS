@@ -1,0 +1,62 @@
+﻿
+
+<!doctype html>
+
+	<html>
+
+		<head>
+	
+		<meta charset="UTF-8">
+	
+	</head>
+		
+<script src="jquery-3.3.1.js">
+</script>
+		
+<script>
+		
+	$(document).ready(function(){
+	
+	
+	$("#p1").mouseover(function(){	
+		$("#p1").css("color","red")});
+		
+	$("#p1").mouseout(function(){	
+		$("#p1").css("color","black")});
+		
+	$("#p1").click(function(){	
+		$("#p1").css("font-size","40px")});
+		
+	$("#img1").click(function(){	
+		$("#img1").attr("src","2.jpg"); });
+		
+	$("#p2").click(function(){	
+		$("#p2").get(0).innerHTML =' <img src="3.jpg"> '});
+	
+		$("#img1").mouseover(function(){
+			$("#img1").css("height","250px","width","250px")});
+		
+	$("#img1").mouseout(function(){
+		$("#img1").css("height","180px","width","200px")});
+	
+	$("#p3").dblclick(function(){ 
+		$("#p3").css("border","5px red dotted")});
+	
+		
+		});
+		
+</script>
+	
+	<body style="align:center">
+
+			<span id="p1">слово</span></br>
+	
+		<img id="img1" src="1.jpg"/></br>
+		
+	<p id="p2"> Текст, который изменяется на изображение </p>
+	
+		<p id="p3"> Абзац с цветной рамкой </p>
+	
+	</body>
+
+	</html>

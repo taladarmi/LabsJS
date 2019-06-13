@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>8ая лаба</title>
+<meta charset="UTF-8">
+
+</head>
+<body>
+<p id="p1" >на этой странице вы можете видеть очень много лисичек. я очень люблю лисиц. лисицы умные и красивые млекопитающие. представители семейства псовых.
+</p>
+<p id="p2" onclick="fun3()">нажми на меня чтобы увидеть 3 милых лисенка:)</p>
+<p onclick="this.style.border='5px red dashed'" ondblclick="this.style.border='2px green dotted'"> лисички делают фыр фыр фыр </p>
+<img id="img1" src="1.jpg" onclick="fun2()"/>
+</br>
+<img src="2.jpg" onMouseOver="this.style.width='60%';this.style.height='60%'" onMouseOut="this.style.width='20%';this.style.height='20%'">
+<script> 
+var x = document.getElementById('p1');
+var a = x.innerHTML.toString();
+var words = a.split(" ");
+document.getElementById('p1').innerHTML = ""
+for(i=0;i<words.length;i++)
+{ 
+document.getElementById('p1').innerHTML += "<span onMouseOver="+"'this.style.color="+'"red"'+"' "+
+"onMouseOut="+"'this.style.color="+'"black"'+"' "+
+"onClick="+"'this.style.fontSize="+'"'+Math.round(Math.random()*100)+'px"'+"' >"
++ words[i] +" </span> ";
+}
+var n=1;
+function fun2()
+{ 
+var img = document.getElementById('img1');
+n= Math.round(Math.random()*9)+1
+img.src = n + ".jpg";
+}
+function fun3()
+{ var i=0;
+var p = document.getElementById('p2');//заменяет содержимое паргарфа картинкой
+ p.innerHTML = "<img src='9.jpg'>"
+	
+}
+
+</script>
+</body>
+</html>

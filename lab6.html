@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+<style>
+#bu {
+border-radius: 7px;
+background: gradient ( linear, pink, black);
+}
+#box
+{
+height:500px;
+width:500px;
+position:absolute;
+border-radius:250px;
+margin-left:30% ;
+margin-top:5%;
+}
+</style>
+</head>
+<body> 
+<form name="s">
+	<input type="checkbox" name="j"/>жопка
+</form>
+<div id="box"> 
+<input type="button " onclick="fun1()" value="Красивая кнопка">
+<input type="button" onclick="fun2()" value="Вторая красивая кнопка">
+</div>
+<script>
+if(document.forms.s.j.checked)document.write('да');
+document.write('<table border><tr><td>Информация о браузере:</td><td>'+navigator.userAgent
++'</td></tr><tr><td>Версия браузера:</td><td>'+navigator.appVersion+'</td></tr><tr><td>Название браузера:</td><td>'+navigator.appName
++'</td></tr><tr><td>Кодовое название браузера:</td><td>'+navigator.appCodeName+'</td></tr><tr><td>OS:</td><td>'+navigator.platform
++'</td></tr><tr><td>Поддержка java:</td><td>'+navigator.javaEnabled()+'</td></tr><tr><td>Ширина экрана:</td><td>'+screen.width
++'</td></tr><tr><td>Высота экрана:</td><td>'+screen.height+'</td></tr><tr><td>Глубина цвета:</td><td>'+screen.colorDepth
++'</td></tr><tr><td>История:</td><td>'+history+'</td></tr><tr><td>Кол-во посещённых ссылок</td><td>'+History.length
++'</td></tr><tr><td>Месторасположение файла:</td><td>'+location.href+'</td></tr><tr><td>Путь к документу</td><td>'+location.pathname
++'</td></tr><tr><td>Имя домена:</td><td>'+location.host+'</td></tr></table>');
+function fun1()
+{nw1 = window.open('','',width=50,height=150);
+nw1.document.write('я новое окно, для закрытия использую вторую кнопку');
+}
+function fun2()
+{
+nw1.close();
+}
+</script>
+<button class="new">новая кнопка</button>
+</body>
+</html>

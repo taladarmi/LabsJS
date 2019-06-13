@@ -1,0 +1,77 @@
+﻿<!--
+
+Задание 1. Создать программу на JS, позволяющую перетащить мышью область текста и картинку.  +
+Задание 2. Создать программу на JS, организующую движение картинки по прямой линии.  +
+Задание 3. Создать программу на JS, организующую движение картинки по кривой линии и возврат ее в исходное состояние. +
+Задание 4. Нарисовать график функции, выбрав функцию с помощью радио кнопки (y=x2, y=x3, y=sin(x), y=cos(x)).+
+Задание 5*. Реализовать выбор цвета графика функции с помощью списка.-
+
+-->
+
+<!doctype html>
+<html>
+	<head>
+	 
+		<style>
+		#dr { width: 100px; height: 100px; background: red; };
+		#block {
+			position:absolute; 
+			background-color:#abc; 
+			left:50px;
+			width:90px; 
+			height:90px;
+			margin:5px; 
+		}
+		.step {
+			position:absolute; 
+		}
+		</style>
+		 <script src="jquery-3.3.1.js">
+		</script>
+
+		<script  src="jquery.min.js"></script>
+		<script  src="jquery-ui.min.js"></script>
+		 
+		<script type="text/javascript">
+		 
+		$( init );
+		var i=0;
+		function init() {
+		  $('#dr').draggable();
+		  $('#text').draggable();
+		}
+		$(document).ready(function(){
+		   $("#but1").click(function(){
+			  $("#dr2").animate({marginLeft:900,marginTop:400},2000);
+		   });
+		   $("#but2").click(function()
+			{
+			 $("#block").animate({"left": "500" },
+			 {
+				 step: function(now, fx) 
+				 {
+				  $(fx.elem).offset({top: Math.sin(now/80)*200+200});		    
+				 }
+			 }); 
+			 $("#block").animate({"left": "0" },
+			 {
+				 step: function(now, fx) 
+				 {
+				  $(fx.elem).offset({top: Math.sin(now/80)*200+200});		    
+				 }
+			 }); 
+			});
+		});
+		
+		</script>
+		 
+	</head>
+	<body>
+		<button id="but1"> Кликни на меня </button>
+		<button id="but2"> И на меня </button>
+		<div id="block" style="position:absolute; background-color:#abc;;width:100px; height:100px; "></div>
+		<div id="dr2" style="width:100px;height:100px;background:blue;"></div>
+		<div id="dr"></div>
+		<text id="text">Летающий текст </text>
+	</body>
+</html>
